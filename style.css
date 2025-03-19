@@ -328,3 +328,69 @@ footer {
         gap: 20px;
     }
 }
+@media screen and (max-width: 768px) {
+    /* Hide the navigation bar on mobile */
+    .sticky-nav {
+        display: none;
+    }
+    
+    /* Adjust header text for mobile */
+    header {
+        padding: 60px 20px;
+        margin-top: 0;
+    }
+
+    header h1 {
+        font-size: 2.5rem; /* Reduce font size */
+    }
+
+    header p {
+        font-size: 1.2rem; /* Reduce font size */
+    }
+
+    /* CTA button adjustments */
+    .cta-button {
+        font-size: 1rem;
+        padding: 12px 20px;
+    }
+
+    /* Adjust services grid for better spacing */
+    .services-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .service-box {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    /* Contact section adjustments */
+    #contact {
+        text-align: center;
+    }
+
+    form {
+        max-width: 100%;
+        width: 90%;
+    }
+
+    form input, form textarea {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    form button {
+        font-size: 1rem;
+    }
+
+    /* Demo projects adjustments */
+    .demo-grid {
+        flex-direction: column;
+    }
+
+    .demo-box {
+        max-width: 100%;
+    }
+}
+
