@@ -285,41 +285,30 @@ footer {
     /* Adjust Navigation */
     .nav-container {
         width: 95%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
     
-    /* Show Mobile Menu Button */
-    .menu-toggle {
-        display: block;
-    }
-    
-    /* Hide Nav Links Initially */
-    nav ul {
-        display: none;
-        flex-direction: column;
-        gap: 15px;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background: var(--primary-color);
-        width: 100%;
-        text-align: center;
-        padding: 20px 0;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-    
-    nav ul.active {
+    /* Remove Full Nav and Place 4 Links Beside Logo */
+    nav {
         display: flex;
     }
     
-    /* Auto-hide Navigation on Click */
-    .menu-toggle:focus ~ nav ul,
-    nav ul li a {
-        display: block;
-        width: 100%;
+    nav ul {
+        display: flex;
+        gap: 10px;
     }
     
-    nav ul li a:active ~ nav ul {
-        display: none;
+    nav ul li {
+        list-style: none;
+    }
+    
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 500;
     }
     
     /* Reduce Section Width */
