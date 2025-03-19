@@ -291,6 +291,10 @@ footer {
     }
     
     /* Remove Full Nav and Place 4 Links Beside Logo */
+    .menu-toggle {
+        display: none;
+    }
+    
     nav {
         display: flex;
     }
@@ -309,6 +313,11 @@ footer {
         text-decoration: none;
         font-size: 1rem;
         font-weight: 500;
+    }
+    
+    /* Fix Scroll Offset Issue for Anchors */
+    section[id] {
+        scroll-margin-top: 80px;
     }
     
     /* Reduce Section Width */
