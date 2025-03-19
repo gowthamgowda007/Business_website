@@ -399,103 +399,97 @@ h1, h2 {
 }
 
 
+/* Align Logo & Nav Items in a Single Line */
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    padding: 10px 0;
+}
+
+/* Ensure Navigation is Inline */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Adjust space between links */
+}
+
+/* Reduce Font & Spacing for Mobile */
 @media screen and (max-width: 768px) {
-    /* Remove Navigation Bar */
-    .sticky-nav {
-        display: none;
-    }
-
-    /* Display Logo and Links Side by Side */
     .nav-container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
         width: 95%;
-        margin: auto;
-        padding: 10px 0;
-    }
-
-    .logo {
-        display: flex;
-        align-items: center;
+        padding: 8px 0;
     }
 
     .logo img {
-        height: 40px; /* Adjusted size */
-        margin-right: 10px;
+        height: 40px; /* Smaller logo */
     }
 
-    /* Inline Menu Links */
-    .inline-menu {
+    nav ul {
         display: flex;
+        flex-direction: row; /* Keep links in one line */
         gap: 12px;
     }
 
-    .inline-menu a {
-        color: white;
-        text-decoration: none;
-        font-size: 0.9rem;
-        font-weight: 500;
-        transition: color 0.3s ease-in-out;
+    nav ul li a {
+        font-size: 0.85rem; /* Reduce font size */
     }
 
-    .inline-menu a:hover {
-        color: var(--cta-color);
-    }
-
-    /* Reduce Font Sizes for Mobile */
-    h1 {
-        font-size: 1.8rem;
-    }
-
-    h2 {
-        font-size: 1.5rem;
-    }
-
-    body {
-        font-size: 0.85rem;
-    }
-
-    /* Reduce spacing between sections */
+    /* Reduce section spacing */
     section {
         padding: 40px 0;
         margin-top: -10px;
     }
+}
 
-    /* Adjust Services Grid */
-    .services-grid {
-        flex-direction: column;
-        align-items: center;
+/* Mobile Adjustments */
+@media screen and (max-width: 768px) {
+    /* Reduce Section Gaps */
+    section {
+        padding: 30px 0; /* Less padding */
+        margin-top: -10px; /* Pull sections closer */
     }
 
-    .service-box {
-        max-width: 85%;
-        padding: 18px;
-        font-size: 0.85rem;
+    /* Make Headings Smaller */
+    h1, h2 {
+        font-size: 1.8rem; /* Smaller headings */
+        margin-bottom: 10px; /* Reduce space below */
     }
 
-    /* Adjust About Section */
-    .about-container {
-        padding: 20px;
-        font-size: 0.85rem;
+    /* Reduce Header Height */
+    header {
+        padding: 60px 15px; /* Less height for a compact look */
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    /* Center the Demo Projects Section */
+    #demo-projects {
+        width: 100%; /* Take full width */
+        margin: 30px auto; /* Reduce margin */
+        text-align: center;
+        overflow: hidden; /* Prevent horizontal scrolling */
     }
 
-    /* Adjust Contact Form */
-    form {
-        max-width: 90%;
-    }
-
-    form input, form textarea {
-        font-size: 0.85rem;
-    }
-
-    form button {
-        font-size: 1rem;
-    }
-
-    /* Adjust Demo Projects Grid */
+    /* Ensure Grid is Centered */
     .demo-grid {
-        flex-direction: column;
-        gap: 20px;
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items */
+        gap: 20px; /* Reduce space between items */
+    }
+
+    /* Fix Any Unwanted Overflow */
+    .demo-box {
+        width: 90%; /* Ensure it fits within screen */
+        max-width: 350px; /* Keep it readable */
+    }
+
+    /* Disable Overflow on Body */
+    body {
+        overflow-x: hidden;
     }
 }
