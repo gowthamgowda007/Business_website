@@ -400,6 +400,408 @@ h1, h2 {
 
 
 
+/* Add font-display for better text rendering */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* CSS Variables for Color Scheme */
+:root {
+    --primary-color: #60A5FA;
+    --secondary-color: #FF8FAB;
+    --cta-color: #FFD700;
+    --hover-color: #FF8F8F;
+}
+
+/* Reset and Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    padding-top: 80px; /* Ensures space for navbar */
+}
+
+/* Sticky Navigation Bar */
+.sticky-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+    padding: 14px 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: top 0.3s ease-in-out;
+}
+
+/* Hide Sticky Nav on Scroll Down */
+.hidden-nav {
+    top: -80px;
+}
+
+/* Navigation Container */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 12px;
+}
+
+/* Navigation Links */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: var(--cta-color);
+}
+
+/* Mobile Menu Button */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* Header */
+header {
+    background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+    text-align: center;
+    padding: 100px 20px;
+    color: pink;
+    
+}
+
+header h1 {
+    color: white; /* Change text color to white */
+    font-size: 4rem;
+    font-weight: bold;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    transform: translateY(-50px);
+    opacity: 0;
+    animation: slideDown 1s ease-out forwards;
+}
+
+
+/* Slide Down Keyframe */
+@keyframes slideDown {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* CTA Button */
+.cta-button {
+    display: inline-block;
+    background: var(--cta-color);
+    color: #333;
+    padding: 14px 24px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.cta-button:hover {
+    background: var(--hover-color);
+}
+
+/* Sections */
+
+/* Adjust section spacing to reduce gaps */
+section {
+    padding: 60px 0; /* Reduce padding */
+    margin-top: -40px;
+    text-align: center; /* Pull sections closer */
+}
+
+
+/* Services Grid */
+.services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.service-box {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, background 0.3s;
+    width: 100%;
+    max-width: 320px;
+}
+
+.service-box:hover {
+    transform: scale(1.05);
+    background: #F27D9E;
+    color: white;
+}
+
+/* Contact Section */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: auto;
+}
+
+form input, form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+form button {
+    background: var(--primary-color);
+    padding: 12px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1.1rem;
+    border-radius: 5px;
+}
+
+form button:hover {
+    background: var(--secondary-color);
+}
+
+/* Footer */
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+/* About Section */
+.about-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.about-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+/* About Box */
+.about-container {
+    background: white;
+    color: #333;
+    padding: 40px;
+    max-width: 800px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Global Heading Styles */
+h1, h2 {
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--primary-color);
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+}
+
+/* Decorative Underline */
+h1::after, h2::after {
+    content: "";
+    width: 80px;
+    height: 4px;
+    background: var(--secondary-color);
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* Responsive Heading Size */
+@media screen and (max-width: 768px) {
+    h1, h2 {
+        font-size: 2rem;
+    }
+
+    /* Adjust Header */
+    header {
+        padding: 50px 15px;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    /* Adjust Navigation */
+    .nav-container {
+        width: 95%;
+    }
+
+    /* Show Mobile Menu Button */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Hide Nav Links Initially */
+    nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: var(--primary-color);
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+}
+header {
+    padding: 120px 20px; /* Increased padding */
+}
+
+/* Adjust section margin to prevent gaps */
+section {
+    padding-top: 80px; /* Ensures spacing is consistent */
+    margin-top: -20px; /* Reduce unwanted gap */
+    position: relative;
+}
+
+/* Adjust heading spacing */
+h1, h2 {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+/* Demo Projects Section */
+#demo-projects {
+    width: 80%;
+    margin: 60px auto;
+    text-align: center;
+}
+
+/* Demo Projects Grid */
+.demo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+/* Demo Box Styling */
+.demo-box {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.demo-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Demo Image Styling */
+.demo-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Demo Project Heading */
+.demo-box h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Demo Project Description */
+.demo-box p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Demo Project Button */
+.demo-box .cta-button {
+    background: var(--primary-color);
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    transition: background 0.3s;
+}
+
+.demo-box .cta-button:hover {
+    background: var(--hover-color);
+}
+@media screen and (max-width: 768px) {
+    .demo-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+}
+
+
+
 /* Mobile Styles */
 @media screen and (max-width: 768px) {
     /* Reduce Header Size */
