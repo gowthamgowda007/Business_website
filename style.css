@@ -40,45 +40,42 @@ body {
 }
 
 /* Navigation Container */
+
+/* Navigation Container */
 .nav-container {
     display: flex;
+    flex-direction: row;  /* Keep items in a row */
     justify-content: space-between;
     align-items: center;
-    width: 90%;
+    width: 95%;
     margin: auto;
+    padding: 10px 0;
 }
 
-/* Logo */
-.logo {
-    display: flex;
-    align-items: center;
-}
-
+/* Logo Styling */
 .logo img {
-    height: 50px;
-    margin-right: 12px;
+    height: 50px; /* Adjust as needed */
 }
 
-/* Navigation Links */
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+/* Navigation Menu */
+.nav-links {
     display: flex;
-    gap: 20px;
+    flex-direction: row; /* Ensure items are in one row */
+    gap: 20px; /* Space between menu items */
+    list-style: none;
 }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.2rem;
+.nav-links li {
+    display: inline-block;
+}
+
+.nav-links a {
+    font-size: 1rem;
     font-weight: 500;
-    transition: color 0.3s ease-in-out;
+    text-decoration: none;
+    color: black;
 }
 
-nav ul li a:hover {
-    color: var(--cta-color);
-}
 
 /* Mobile Menu Button */
 .menu-toggle {
@@ -466,30 +463,54 @@ nav {
 
 
 @media screen and (max-width: 768px) {
-    /* Center the Demo Projects Section */
-    #demo-projects {
-        width: 100%; /* Take full width */
-        margin: 30px auto; /* Reduce margin */
-        text-align: center;
-        overflow: hidden; /* Prevent horizontal scrolling */
+    /* Reduce Header Height */
+    header {
+        padding: 50px 15px; /* Compact height */
     }
 
-    /* Ensure Grid is Centered */
+    /* Navigation Container */
+    @media screen and (max-width: 768px) {
+        .nav-container {
+            width: 100%;
+            padding: 8px 10px;
+        }
+    
+        .logo img {
+            height: 40px; /* Smaller logo for mobile */
+        }
+    
+        .nav-links {
+            gap: 10px; /* Reduce spacing */
+        }
+    
+        .nav-links a {
+            font-size: 0.85rem; /* Reduce font size */
+        }
+    }
+    
+
+    /* Ensure Sections Fit Well */
+    section {
+        padding: 30px 0;
+        margin-top: -10px;
+    }
+
+    /* Adjust Demo Box Layout */
     .demo-grid {
         display: flex;
-        flex-direction: column; /* Stack items vertically */
-        align-items: center; /* Center items */
-        gap: 20px; /* Reduce space between items */
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
     }
 
-    /* Fix Any Unwanted Overflow */
     .demo-box {
         width: 90%; /* Ensure it fits within screen */
-        max-width: 350px; /* Keep it readable */
+        max-width: 350px;
     }
 
-    /* Disable Overflow on Body */
+    /* Prevent Horizontal Scrolling */
     body {
         overflow-x: hidden;
     }
 }
+
