@@ -312,12 +312,13 @@ footer {
     }
     
     /* Auto-hide Navigation on Click */
+    .menu-toggle:focus ~ nav ul,
     nav ul li a {
         display: block;
         width: 100%;
     }
     
-    nav ul li a:active {
+    nav ul li a:active ~ nav ul {
         display: none;
     }
     
