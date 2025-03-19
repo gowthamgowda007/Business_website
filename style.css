@@ -17,6 +17,7 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    scroll-behavior: smooth;
 }
 
 /* Sticky Navigation Bar */
@@ -26,10 +27,15 @@ body {
     left: 0;
     width: 100%;
     background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
-    padding: 18px 0;
+    padding: 14px 0;
     z-index: 1000;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     transition: top 0.3s ease-in-out;
+}
+
+/* Hide Sticky Nav on Scroll Down */
+.hidden-nav {
+    top: -80px;
 }
 
 /* Navigation Container */
@@ -41,14 +47,14 @@ body {
     margin: auto;
 }
 
-/* Logo Section */
+/* Logo */
 .logo {
     display: flex;
     align-items: center;
 }
 
 .logo img {
-    height: 60px;
+    height: 50px;
     margin-right: 12px;
 }
 
@@ -64,41 +70,38 @@ nav ul {
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 500;
     transition: color 0.3s ease-in-out;
 }
 
 nav ul li a:hover {
-    color: var(--cta-color); /* Gold hover effect */
+    color: var(--cta-color);
+}
+
+/* Mobile Menu Button */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
 }
 
 /* Header */
 header {
     background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
     text-align: center;
-    padding: 100px 20px;
+    padding: 80px 20px;
     color: white;
-    margin-top: 80px; /* Offset for fixed navbar */
+    margin-top: 60px;
 }
 
 header h1 {
-    font-size: 4rem; /* Bigger title */
+    font-size: 3rem;
     font-weight: bold;
-    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow effect */
-    animation: fadeInScale 1.2s ease-in-out;
-}
-
-/* Keyframe Animation */
-@keyframes fadeInScale {
-    0% {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 /* CTA Button */
@@ -106,8 +109,8 @@ header h1 {
     display: inline-block;
     background: var(--cta-color);
     color: #333;
-    padding: 14px 24px;
-    font-size: 1.2rem;
+    padding: 12px 24px;
+    font-size: 1.1rem;
     border-radius: 8px;
     text-decoration: none;
     transition: background 0.3s;
@@ -120,38 +123,31 @@ header h1 {
 /* Sections */
 .container {
     width: 80%;
-    margin: 60px auto;
+    margin: 50px auto;
     text-align: center;
-}
-
-h2 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #333;
 }
 
 /* Services Grid */
 .services-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 20px;
     justify-content: center;
 }
 
 .service-box {
     background: white;
-    padding: 40px;
+    padding: 30px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, background 0.3s;
     width: 100%;
-    max-width: 350px;
+    max-width: 320px;
 }
 
 .service-box:hover {
     transform: scale(1.05);
-    background: #F27D9E; /* Darker shade of secondary color */
+    background: #F27D9E;
     color: white;
 }
 
@@ -160,30 +156,24 @@ form {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    max-width: 450px;
+    max-width: 400px;
     margin: auto;
 }
 
 form input, form textarea {
-    padding: 12px;
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1rem;
 }
 
-form textarea {
-    height: 120px;
-    resize: none;
-}
-
 form button {
     background: var(--primary-color);
-    padding: 14px;
+    padding: 12px;
     border: none;
     color: white;
     cursor: pointer;
-    transition: background 0.3s;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     border-radius: 5px;
 }
 
@@ -196,64 +186,11 @@ footer {
     background: #222;
     color: white;
     text-align: center;
-    padding: 20px;
-    margin-top: 40px;
+    padding: 15px;
+    margin-top: 30px;
 }
 
-/* About Section */
-#about {
-    width: 80%;
-    margin: 60px auto;
-    padding: 60px 0;
-}
-
-/* About Box */
-.about-box {
-    background: white;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 900px; /* Box width limit */
-    margin: 0 auto; /* Center the box */
-}
-
-/* Heading Style */
-.about-box h2 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #333; /* Dark gray for the title */
-    text-align: center; /* Center the heading */
-}
-
-/* Paragraph Style */
-.about-box p {
-    font-size: 1.1rem;
-    color: #666; /* Lighter gray for text */
-    line-height: 1.8;
-    margin-bottom: 15px;
-    text-align: left; /* Left-aligned text for readability */
-}
-
-/* Last paragraph with bold emphasis */
-.about-box p:last-child {
-    font-weight: bold;
-}
-
-/* Mobile responsiveness */
-@media screen and (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-
-    .nav-links.active {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-}
-
-/* Demo Projects Section */
+/* ✅ Demo Projects Section (Same as Previous) */
 #demo-projects {
     width: 80%;
     margin: 60px auto;
@@ -322,144 +259,102 @@ footer {
 .demo-box .cta-button:hover {
     background: var(--hover-color);
 }
+
 @media screen and (max-width: 768px) {
     .demo-grid {
         flex-direction: column;
         gap: 20px;
     }
 }
+
+
+
+
+/* Mobile Styles */
 @media screen and (max-width: 768px) {
-    /* Hide the navigation bar on mobile */
-    .sticky-nav {
-        display: none;
+    /* Reduce Header Size */
+    header {
+        padding: 50px 15px;
+        margin-top: 50px;
     }
     
-    /* Adjust header text for mobile */
-    header {
-        padding: 60px 20px;
-        margin-top: 0;
-    }
-
     header h1 {
-        font-size: 2.5rem; /* Reduce font size */
+        font-size: 2rem;
     }
-
-    header p {
-        font-size: 1.2rem; /* Reduce font size */
+    
+    /* Adjust Navigation */
+    .nav-container {
+        width: 95%;
     }
-
-    /* CTA button adjustments */
-    .cta-button {
-        font-size: 1rem;
-        padding: 12px 20px;
+    
+    /* Show Mobile Menu Button */
+    .menu-toggle {
+        display: block;
     }
-
-    /* Adjust services grid for better spacing */
+    
+    /* Hide Nav Links Initially */
+    nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: var(--primary-color);
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    nav ul.active {
+        display: flex;
+    }
+    
+    /* Reduce Section Width */
+    .container, #demo-projects {
+        width: 95%;
+    }
+    
+    /* Adjust Services Grid */
     .services-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .service-box {
+        max-width: 90%;
+        padding: 20px;
+        font-size: 0.9rem;
+    }
+    
+    /* Adjust Demo Projects Grid */
+    .demo-grid {
         flex-direction: column;
         gap: 20px;
     }
-
-    .service-box {
+    
+    .demo-box {
+        max-width: 90%;
         padding: 20px;
-        max-width: 100%;
+        font-size: 0.9rem;
     }
-
-    /* Contact section adjustments */
-    #contact {
-        text-align: center;
-    }
-
+    
+    /* Adjust Form Size */
     form {
-        max-width: 100%;
-        width: 90%;
+        max-width: 90%;
     }
-
+    
     form input, form textarea {
-        font-size: 1rem;
-        padding: 10px;
+        font-size: 0.9rem;
     }
-
+    
     form button {
         font-size: 1rem;
     }
-
-    /* Demo projects adjustments */
-    .demo-grid {
-        flex-direction: column;
-    }
-
-    .demo-box {
-        max-width: 100%;
-    }
-}
-/* Existing CSS remains unchanged */
-
-/* Add this at the end for better mobile responsiveness */
-@media screen and (max-width: 768px) {
-    /* Hide the navigation bar on mobile */
-    .sticky-nav {
-        display: none;
-    }
     
-    /* Adjust header text for mobile */
-    header {
-        padding: 60px 20px;
-        margin-top: 0;
-    }
-
-    header h1 {
-        font-size: 2.5rem; /* Reduce font size */
-    }
-
-    header p {
-        font-size: 1.2rem; /* Reduce font size */
-    }
-
-    /* CTA button adjustments */
-    .cta-button {
-        font-size: 1rem;
-        padding: 12px 20px;
-    }
-
-    /* Adjust services grid for better spacing */
-    .services-grid {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .service-box {
-        padding: 20px;
-        max-width: 100%;
-    }
-
-    /* Contact section adjustments */
-    #contact {
-        text-align: center;
-    }
-
-    form {
-        max-width: 100%;
-        width: 90%;
-    }
-
-    form input, form textarea {
-        font-size: 1rem;
-        padding: 10px;
-    }
-
-    form button {
-        font-size: 1rem;
-    }
-
-    /* Demo projects adjustments */
-    .demo-grid {
-        flex-direction: column;
-    }
-
-    .demo-box {
-        max-width: 100%;
+    /* Reduce General Font Sizes */
+    body {
+        font-size: 0.9rem;
     }
 }
-
-
