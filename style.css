@@ -1,0 +1,330 @@
+/* Add font-display for better text rendering */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* CSS Variables for Color Scheme */
+:root {
+    --primary-color: #60A5FA;
+    --secondary-color: #FF8FAB;
+    --cta-color: #FFD700;
+    --hover-color: #FF8F8F;
+}
+
+/* Reset and Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Sticky Navigation Bar */
+.sticky-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+    padding: 18px 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: top 0.3s ease-in-out;
+}
+
+/* Navigation Container */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+}
+
+/* Logo Section */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 60px;
+    margin-right: 12px;
+}
+
+/* Navigation Links */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: var(--cta-color); /* Gold hover effect */
+}
+
+/* Header */
+header {
+    background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+    text-align: center;
+    padding: 100px 20px;
+    color: white;
+    margin-top: 80px; /* Offset for fixed navbar */
+}
+
+header h1 {
+    font-size: 4rem; /* Bigger title */
+    font-weight: bold;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow effect */
+    animation: fadeInScale 1.2s ease-in-out;
+}
+
+/* Keyframe Animation */
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* CTA Button */
+.cta-button {
+    display: inline-block;
+    background: var(--cta-color);
+    color: #333;
+    padding: 14px 24px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.cta-button:hover {
+    background: var(--hover-color);
+}
+
+/* Sections */
+.container {
+    width: 80%;
+    margin: 60px auto;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Services Grid */
+.services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.service-box {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, background 0.3s;
+    width: 100%;
+    max-width: 350px;
+}
+
+.service-box:hover {
+    transform: scale(1.05);
+    background: #F27D9E; /* Darker shade of secondary color */
+    color: white;
+}
+
+/* Contact Section */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 450px;
+    margin: auto;
+}
+
+form input, form textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+form textarea {
+    height: 120px;
+    resize: none;
+}
+
+form button {
+    background: var(--primary-color);
+    padding: 14px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
+
+form button:hover {
+    background: var(--secondary-color);
+}
+
+/* Footer */
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* About Section */
+#about {
+    width: 80%;
+    margin: 60px auto;
+    padding: 60px 0;
+}
+
+/* About Box */
+.about-box {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 900px; /* Box width limit */
+    margin: 0 auto; /* Center the box */
+}
+
+/* Heading Style */
+.about-box h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333; /* Dark gray for the title */
+    text-align: center; /* Center the heading */
+}
+
+/* Paragraph Style */
+.about-box p {
+    font-size: 1.1rem;
+    color: #666; /* Lighter gray for text */
+    line-height: 1.8;
+    margin-bottom: 15px;
+    text-align: left; /* Left-aligned text for readability */
+}
+
+/* Last paragraph with bold emphasis */
+.about-box p:last-child {
+    font-weight: bold;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Demo Projects Section */
+#demo-projects {
+    width: 80%;
+    margin: 60px auto;
+    text-align: center;
+}
+
+/* Demo Projects Grid */
+.demo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+/* Demo Box Styling */
+.demo-box {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.demo-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Demo Image Styling */
+.demo-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Demo Project Heading */
+.demo-box h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Demo Project Description */
+.demo-box p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Demo Project Button */
+.demo-box .cta-button {
+    background: var(--primary-color);
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    transition: background 0.3s;
+}
+
+.demo-box .cta-button:hover {
+    background: var(--hover-color);
+}
+@media screen and (max-width: 768px) {
+    .demo-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+}

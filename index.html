@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mindwave AI - AI-powered digital marketing solutions for content, SEO, chatbots, and ad optimization.">
+    <meta property="og:title" content="Mindwave AI - AI-Powered Digital Marketing">
+    <meta property="og:description" content="Boost your business with AI-driven marketing solutions.">
+    <meta property="og:image" content="logo.png">
+    <meta property="og:url" content="https://mindwaveai.com">
+    <meta name="robots" content="index, follow">
+    <title>Mindwave AI - AI-Powered Digital Marketing</title>
+    <link rel="preload" href="style.css" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Sticky Navigation Bar with Responsive Menu -->
+    <nav class="sticky-nav">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="logo.png" alt="Mindwave AI Logo" loading="lazy">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#demo-projects">Demo Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container">
+            <h1>Mindwave AI</h1>
+            <p>Supercharge Your Business with AI-Powered Marketing</p>
+            <a href="#contact" class="cta-button">Get a Free Consultation</a>
+        </div>
+    </header>
+
+    <section id="services" class="container">
+        <h2>Our AI-Driven Services</h2>
+        <div class="services-grid">
+            <article class="service-box">
+                <h3>AI Chatbots and Voice assistant</h3>
+                <p>Automate customer interactions and boost lead generation.</p>
+            </article>
+            <article class="service-box">
+                <h3>AI-Generated Content</h3>
+                <p>AI-powered content creation for blogs, social media, and ads.</p>
+            </article>
+            <article class="service-box">
+                <h3>AI-Powered SEO</h3>
+                <p>Advanced keyword research and SEO strategies for better rankings.</p>
+            </article>
+            <article class="service-box">
+                <h3>AI-Optimized Ads</h3>
+                <p>Maximize ad performance with AI-driven analytics and targeting.</p>
+            </article>
+        </div>
+    </section>
+
+    <section id="about" class="container">
+        <h2>About Mindwave AI</h2>
+        <div class="about-box">
+            <p>
+                Mindwave AI revolutionizes digital marketing with AI-powered solutions that enhance content creation, improve SEO, and optimize ad performance. Our smart tools help automate customer interactions, boost lead generation, and maximize ROI.
+            </p> 
+        
+        <p>
+            Our mission is to empower businesses with data-driven technologies that increase efficiency and improve results in the digital marketing world.
+        </p>
+        <p>
+            <strong>Get in touch to see how we can help your business grow!</strong>
+        </p>
+    </div>
+    </section>
+    
+
+    <!-- Demo Projects Section -->
+    <section id="demo-projects" class="container">
+        <h2>Available Demo Projects</h2>
+        
+        <div class="demo-grid">
+        
+            <article class="demo-box">
+                <img src="demo3.jpg" alt="Demo Project 3" class="demo-img">
+                <h3>AI Chatbot Interaction</h3>
+                <p>See how our AI chatbots can engage with customers and improve lead conversion.</p>
+                <a href="#" class="cta-button">View Demo</a>
+            </article>
+            <article class="demo-box">
+                <img src="voice-assistant-demo.jpg" alt="Voice Assistant Demo" class="demo-img">
+                <h3>AI Voice Assistant</h3>
+                <p>Discover how our AI-powered voice assistants can enhance customer engagement and streamline communication.</p>
+                <a href="#" class="cta-button">View Demo</a>
+            </article>            
+        </div>
+    </section>
+
+    <section id="contact" class="container">
+        <h2>Contact Us</h2>
+        <p>📞 Call: +91 7676736779</p>
+        <p>📧 Email: gowtham.se21@bmsce.ac.in</p>
+        <form id="contact-form" method="POST" aria-label="Contact Form">
+            <input type="text" id="user_name" name="name" placeholder="Your Name" required aria-label="Your Name">
+            <input type="email" id="user_email" name="email" placeholder="Your Email" required aria-label="Your Email">
+            <textarea id="user_message" name="message" placeholder="Your Message" required aria-label="Your Message"></textarea>
+            <button type="button" id="sendBtn">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Mindwave AI. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        let timeout;
+        function toggleMenu() {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => {
+                document.querySelector('.nav-links').classList.toggle('active');
+            }, 200);  // 200ms debounce time
+        }
+
+        // Send button functionality
+        document.getElementById('sendBtn').addEventListener('click', function() {
+            var name = document.getElementById('user_name').value;
+            var email = document.getElementById('user_email').value;
+            var message = document.getElementById('user_message').value;
+
+            // Construct the mailto link with pre-filled data
+            var subject = 'Contact Form Message from ' + name;
+            var body = 'Name: ' + name + '%0A' + 'Email: ' + email + '%0A' + 'Message: ' + message;
+            var mailtoLink = 'mailto:gowtham.se21@bmsce.ac.in?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+
+            // Open the user's default email client
+            window.location.href = mailtoLink;
+        });
+    </script>
+
+</body>
+</html>
