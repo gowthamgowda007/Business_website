@@ -22,15 +22,16 @@
             <a href="#" class="logo">
                 <img src="logo.png" alt="Mindwave AI Logo" loading="lazy">
             </a>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
             <ul class="nav-links">
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#demo-projects">Demo Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-          
         </div>
     </nav>
+    
 
     <header>
         <div class="container">
@@ -44,7 +45,7 @@
         <h2>Our AI-Driven Services</h2>
         <div class="services-grid">
             <article class="service-box">
-                <h3>AI Chatbots and Voice assistant</h3>
+                <h3>AI Chatbots and Voice Assistant</h3>
                 <p>Automate customer interactions and boost lead generation.</p>
             </article>
             <article class="service-box">
@@ -61,39 +62,22 @@
             </article>
         </div>
     </section>
+
     <section id="about" class="about-section">
         <h2>About Mindwave AI</h2>
         <div class="about-container">
             <p>
-                Mindwave AI is an advanced digital marketing platform powered by artificial intelligence. 
-                We specialize in AI-driven content creation, SEO, chatbots, and ad optimization to help 
+                Mindwave AI is an advanced digital marketing platform powered by artificial intelligence.
+                We specialize in AI-driven content creation, SEO, chatbots, and ad optimization to help
                 businesses grow online effortlessly.
-            </p>
-            <p>
-                Our cutting-edge algorithms analyze market trends, user behavior, and competitor strategies 
-                to deliver highly targeted marketing solutions. Whether you're a startup or an established brand, 
-                Mindwave AI helps you create impactful content, optimize your campaigns, and engage with your 
-                audience like never before.
-            </p>
-            <p>
-                With automation, predictive analytics, and machine learning, we ensure that your business 
-                stays ahead in the digital landscape. Our AI-powered chatbots provide instant customer support, 
-                while our SEO tools improve search rankings and drive organic traffic.
-            </p>
-            <p>
-                Join Mindwave AI today and revolutionize the way you market your business!
             </p>
         </div>
     </section>
     
-    
-
     <!-- Demo Projects Section -->
     <section id="demo-projects" class="container">
         <h2>Available Demo Projects</h2>
-        
         <div class="demo-grid">
-        
             <article class="demo-box">
                 <img src="demo3.jpg" alt="Demo Project 3" class="demo-img">
                 <h3>AI Chatbot Interaction</h3>
@@ -105,7 +89,7 @@
                 <h3>AI Voice Assistant</h3>
                 <p>Discover how our AI-powered voice assistants can enhance customer engagement and streamline communication.</p>
                 <a href="#" class="cta-button">View Demo</a>
-            </article>            
+            </article>
         </div>
     </section>
 
@@ -113,10 +97,10 @@
         <h2>Contact Us</h2>
         <p>📞 Call: +91 7676736779</p>
         <p>📧 Email: gowtham.se21@bmsce.ac.in</p>
-        <form id="contact-form" method="POST" aria-label="Contact Form">
-            <input type="text" id="user_name" name="name" placeholder="Your Name" required aria-label="Your Name">
-            <input type="email" id="user_email" name="email" placeholder="Your Email" required aria-label="Your Email">
-            <textarea id="user_message" name="message" placeholder="Your Message" required aria-label="Your Message"></textarea>
+        <form id="contact-form" method="POST">
+            <input type="text" id="user_name" name="name" placeholder="Your Name" required>
+            <input type="email" id="user_email" name="email" placeholder="Your Email" required>
+            <textarea id="user_message" name="message" placeholder="Your Message" required></textarea>
             <button type="button" id="sendBtn">Send Message</button>
         </form>
     </section>
@@ -128,28 +112,32 @@
     </footer>
 
     <script>
-        let timeout;
-        function toggleMenu() {
-            clearTimeout(timeout);
-            timeout = setTimeout(() => {
-                document.querySelector('.nav-links').classList.toggle('active');
-            }, 200);  // 200ms debounce time
-        }
+       // Toggle Mobile Menu
+function toggleMenu() {
+    document.querySelector('.nav-links').classList.toggle('active');
+}
 
-        // Send button functionality
-        document.getElementById('sendBtn').addEventListener('click', function() {
-            var name = document.getElementById('user_name').value;
-            var email = document.getElementById('user_email').value;
-            var message = document.getElementById('user_message').value;
+// Auto-close menu when a link is clicked
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.querySelector('.nav-links').classList.remove('active');
+    });
+});
 
-            // Construct the mailto link with pre-filled data
-            var subject = 'Contact Form Message from ' + name;
-            var body = 'Name: ' + name + '%0A' + 'Email: ' + email + '%0A' + 'Message: ' + message;
-            var mailtoLink = 'mailto:gowtham.se21@bmsce.ac.in?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+// Send Button Email Functionality
+document.getElementById('sendBtn').addEventListener('click', function() {
+    var name = document.getElementById('user_name').value;
+    var email = document.getElementById('user_email').value;
+    var message = document.getElementById('user_message').value;
 
-            // Open the user's default email client
-            window.location.href = mailtoLink;
-        });
+    var subject = 'Contact Form Message from ' + name;
+    var body = 'Name: ' + name + '%0A' + 'Email: ' + email + '%0A' + 'Message: ' + message;
+    
+    var mailtoLink = 'mailto:gowtham.se21@bmsce.ac.in?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+
+    window.location.href = mailtoLink;
+});
+
     </script>
 
 </body>

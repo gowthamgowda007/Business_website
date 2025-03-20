@@ -19,6 +19,9 @@ body {
     line-height: 1.6;
     scroll-behavior: smooth;
     padding-top: 80px; /* Ensures space for navbar */
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+    max-width: 100%;
+    text-align: center;
 }
 
 /* Sticky Navigation Bar */
@@ -40,13 +43,10 @@ body {
 }
 
 /* Navigation Container */
-
-/* Navigation Container */
 .nav-container {
     display: flex;
-    flex-direction: row;  /* Keep items in a row */
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     width: 95%;
     margin: auto;
     padding: 10px 0;
@@ -54,15 +54,17 @@ body {
 
 /* Logo Styling */
 .logo img {
-    height: 50px; /* Adjust as needed */
+    height: 50px;
 }
 
 /* Navigation Menu */
 .nav-links {
     display: flex;
-    flex-direction: row; /* Ensure items are in one row */
-    gap: 20px; /* Space between menu items */
+    flex-direction: row;
+    gap: 20px;
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .nav-links li {
@@ -74,8 +76,12 @@ body {
     font-weight: 500;
     text-decoration: none;
     color: black;
+    transition: color 0.3s;
 }
 
+.nav-links a:hover {
+    color: var(--hover-color);
+}
 
 /* Mobile Menu Button */
 .menu-toggle {
@@ -87,25 +93,45 @@ body {
     cursor: pointer;
 }
 
+/* Responsive Mobile Menu */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        background: rgba(0, 0, 0, 0.9);
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
+
 /* Header */
 header {
     background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
     text-align: center;
-    padding: 100px 20px;
+    padding: 80px 20px;
     color: pink;
-    
 }
 
 header h1 {
-    color: white; /* Change text color to white */
-    font-size: 4rem;
+    color: white;
+    font-size: 3rem;
     font-weight: bold;
     text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
     transform: translateY(-50px);
     opacity: 0;
     animation: slideDown 1s ease-out forwards;
 }
-
 
 /* Slide Down Keyframe */
 @keyframes slideDown {
@@ -124,8 +150,8 @@ header h1 {
     display: inline-block;
     background: var(--cta-color);
     color: #333;
-    padding: 14px 24px;
-    font-size: 1.2rem;
+    padding: 12px 20px;
+    font-size: 1rem;
     border-radius: 8px;
     text-decoration: none;
     transition: background 0.3s;
@@ -136,381 +162,164 @@ header h1 {
 }
 
 /* Sections */
-
-/* Adjust section spacing to reduce gaps */
 section {
-    padding: 60px 0; /* Reduce padding */
-    margin-top: -40px;
-    text-align: center; /* Pull sections closer */
+    padding: 40px 10px;
+    text-align: center;
 }
 
-
-/* Services Grid */
-.services-grid {
+/* Responsive Grid */
+.services-grid, .about-grid, .demo-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 10px;
     justify-content: center;
 }
 
-.service-box {
+/* Service, About, and Demo Boxes */
+.service-box, .about-box, .demo-box {
     background: white;
-    padding: 30px;
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, background 0.3s;
-    width: 100%;
-    max-width: 320px;
+    width: 90%;
+    max-width: 300px;
+    text-align: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
 }
 
-.service-box:hover {
+.service-box:hover, .about-box:hover, .demo-box:hover {
     transform: scale(1.05);
     background: #F27D9E;
     color: white;
 }
 
-/* Contact Section */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-width: 400px;
-    margin: auto;
+/* Make "About" section visible */
+.about-box {
+    background: #FFF4F4;
+    border: 1px solid #FF8FAB;
 }
 
-form input, form textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-form button {
-    background: var(--primary-color);
-    padding: 12px;
-    border: none;
-    color: white;
-    cursor: pointer;
-    font-size: 1.1rem;
-    border-radius: 5px;
-}
-
-form button:hover {
-    background: var(--secondary-color);
-}
-
-/* Footer */
-footer {
-    background: #222;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    margin-top: 30px;
-}
-
-/* About Section */
-.about-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 100px 20px;
-    text-align: center;
-}
-
-.about-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: var(--primary-color);
-}
-
-/* About Box */
-.about-container {
-    background: white;
-    color: #333;
-    padding: 40px;
-    max-width: 800px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-/* Global Heading Styles */
-h1, h2 {
-    font-weight: 700;
-    text-transform: uppercase;
-    text-align: center;
-    color: var(--primary-color);
-    position: relative;
-    padding-bottom: 10px;
-    margin-bottom: 30px;
-    font-size: 2.5rem;
-}
-
-/* Decorative Underline */
-h1::after, h2::after {
-    content: "";
-    width: 80px;
-    height: 4px;
-    background: var(--secondary-color);
-    display: block;
-    margin: 10px auto 0;
-    border-radius: 2px;
-}
-
-/* Responsive Heading Size */
-@media screen and (max-width: 768px) {
-    h1, h2 {
-        font-size: 2rem;
-    }
-
-    /* Adjust Header */
-    header {
-        padding: 50px 15px;
-    }
-
-    header h1 {
-        font-size: 2.5rem;
-    }
-
-    /* Adjust Navigation */
-    .nav-container {
-        width: 95%;
-    }
-
-    /* Show Mobile Menu Button */
-    .menu-toggle {
-        display: block;
-    }
-
-    /* Hide Nav Links Initially */
-    nav ul {
-        display: none;
-        flex-direction: column;
-        gap: 15px;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background: var(--primary-color);
+/* Fix text overflow on mobile */
+@media (max-width: 600px) {
+    .service-box, .about-box, .demo-box {
         width: 100%;
+        max-width: 320px;
+        padding: 15px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
         text-align: center;
-        padding: 20px 0;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
-    nav ul.active {
-        display: flex;
+    .service-box p, .about-box p, .demo-box p {
+        font-size: 14px;
+        line-height: 1.4;
+        margin: 5px 0;
+        word-break: break-word;
     }
 }
-header {
-    padding: 120px 20px; /* Increased padding */
-}
 
-/* Adjust section margin to prevent gaps */
-section {
-    padding-top: 80px; /* Ensures spacing is consistent */
-    margin-top: -20px; /* Reduce unwanted gap */
-    position: relative;
-}
-
-/* Adjust heading spacing */
-h1, h2 {
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
-
-/* Demo Projects Section */
-#demo-projects {
-    width: 80%;
-    margin: 60px auto;
-    text-align: center;
-}
-
-/* Demo Projects Grid */
-.demo-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-}
-
-/* Demo Box Styling */
-.demo-box {
+/* Contact Section */
+#contact {
+    max-width: 80%;
+    margin: 30px auto;
     background: white;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 350px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.demo-box:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* Demo Image Styling */
-.demo-img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 20px;
-}
-
-/* Demo Project Heading */
-.demo-box h3 {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-/* Demo Project Description */
-.demo-box p {
-    font-size: 1rem;
-    color: #666;
-    margin-bottom: 20px;
-}
-
-/* Demo Project Button */
-.demo-box .cta-button {
-    background: var(--primary-color);
-    padding: 12px 20px;
-    font-size: 1.1rem;
+#contact-form input, #contact-form textarea {
+    width: 95%;
+    padding: 8px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    text-decoration: none;
-    color: white;
-    transition: background 0.3s;
 }
 
-.demo-box .cta-button:hover {
+#contact-form button {
+    width: 95%;
+    padding: 8px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#contact-form button:hover {
     background: var(--hover-color);
 }
-@media screen and (max-width: 768px) {
-    .demo-grid {
-        flex-direction: column;
-        gap: 20px;
+
+/* Prevent horizontal scrolling */
+@media (max-width: 768px) {
+    #contact {
+        max-width: 90%;
     }
 
+    .services-grid, .demo-grid {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        white-space: nowrap;
+        gap: 10px;
+        padding-bottom: 10px;
+    }
+
+    .service-box, .demo-box {
+        min-width: 200px;
+        font-size: 0.9rem;
+    }
 }
 
+/* Reduce header height on mobile */
+@media (max-width: 768px) {
+    header {
+        padding: 60px 15px; /* Reduced padding */
+    }
 
-/* Align Logo & Nav Items in a Single Line */
-.nav-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 90%;
+    header h1 {
+        font-size: 2.5rem; /* Slightly smaller heading */
+    }
+
+    /* Reduce sticky nav height */
+    .sticky-nav {
+        padding: 10px 0; /* Reduced height */
+    }
+
+    .hidden-nav {
+        top: -60px; /* Adjust hiding position */
+    }
+}
+
+/* About Section Styling */
+#about {
+    background: #FFF4F4; /* Light pink background */
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 20px auto; /* Adds spacing */
+    max-width: 800px; /* Restricts width */
+    border: 2px solid #F27D9E; /* Border to match service boxes */
+}
+
+/* Ensure text wraps properly */
+#about p {
+    font-size: 1rem;
+    color: #333;
+    max-width: 90%;
     margin: auto;
-    padding: 10px 0;
 }
 
-/* Ensure Navigation is Inline */
-nav {
-    display: flex;
-    align-items: center;
-    gap: 20px; /* Adjust space between links */
-}
-
-/* Reduce Font & Spacing for Mobile */
-@media screen and (max-width: 768px) {
-    .nav-container {
-        width: 95%;
-        padding: 8px 0;
-    }
-
-    .logo img {
-        height: 40px; /* Smaller logo */
-    }
-
-    nav ul {
-        display: flex;
-        flex-direction: row; /* Keep links in one line */
-        gap: 12px;
-    }
-
-    nav ul li a {
-        font-size: 0.85rem; /* Reduce font size */
-    }
-
-    /* Reduce section spacing */
-    section {
-        padding: 40px 0;
-        margin-top: -10px;
+/* Responsive: Adjust box size */
+@media (max-width: 768px) {
+    #about {
+        max-width: 90%;
+        padding: 30px 15px;
     }
 }
-
-/* Mobile Adjustments */
-@media screen and (max-width: 768px) {
-    /* Reduce Section Gaps */
-    section {
-        padding: 30px 0; /* Less padding */
-        margin-top: -10px; /* Pull sections closer */
-    }
-
-    /* Make Headings Smaller */
-    h1, h2 {
-        font-size: 1.8rem; /* Smaller headings */
-        margin-bottom: 10px; /* Reduce space below */
-    }
-
-    /* Reduce Header Height */
-    header {
-        padding: 60px 15px; /* Less height for a compact look */
-    }
-}
-
-
-@media screen and (max-width: 768px) {
-    /* Reduce Header Height */
-    header {
-        padding: 50px 15px; /* Compact height */
-    }
-
-    /* Navigation Container */
-    @media screen and (max-width: 768px) {
-        .nav-container {
-            width: 100%;
-            padding: 8px 10px;
-        }
-    
-        .logo img {
-            height: 40px; /* Smaller logo for mobile */
-        }
-    
-        .nav-links {
-            gap: 10px; /* Reduce spacing */
-        }
-    
-        .nav-links a {
-            font-size: 0.85rem; /* Reduce font size */
-        }
-    }
-    
-
-    /* Ensure Sections Fit Well */
-    section {
-        padding: 30px 0;
-        margin-top: -10px;
-    }
-
-    /* Adjust Demo Box Layout */
-    .demo-grid {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .demo-box {
-        width: 90%; /* Ensure it fits within screen */
-        max-width: 350px;
-    }
-
-    /* Prevent Horizontal Scrolling */
-    body {
-        overflow-x: hidden;
-    }
-}
-
