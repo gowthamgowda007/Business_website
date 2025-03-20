@@ -84,30 +84,42 @@ body {
 }
 
 /* Mobile Menu Button */
-.menu-toggle {
+/* Mobile Menu Button */
+.menu-toggle{
     display: none;
     font-size: 2rem;
     background: none;
     border: none;
-    color: white;
+    color: white; /* Ensures the menu icon is white */
     cursor: pointer;
 }
 
+
 /* Responsive Mobile Menu */
 @media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-    }
-
     .nav-links {
         display: none;
         flex-direction: column;
         position: absolute;
         top: 60px;
         right: 10px;
-        background: rgba(0, 0, 0, 0.9);
+        background: white; /* Change background to white */
         padding: 10px;
         border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links a {
+        color: black; /* Ensure text is visible */
+        font-size: 1rem;
+        font-weight: bold;
+        padding: 10px;
+        display: block;
+        text-decoration: none;
+    }
+
+    .nav-links a:hover {
+        color: var(--hover-color); /* Add hover effect */
     }
 
     .nav-links.active {
