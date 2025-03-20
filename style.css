@@ -18,8 +18,8 @@ body {
     padding: 0;
     line-height: 1.6;
     scroll-behavior: smooth;
-    padding-top: 80px; /* Ensures space for navbar */
-    overflow-x: hidden; /* Prevents horizontal scrolling */
+    padding-top: 80px;
+    overflow-x: hidden;
     max-width: 100%;
     text-align: center;
 }
@@ -84,42 +84,45 @@ body {
 }
 
 /* Mobile Menu Button */
-/* Mobile Menu Button */
-.menu-toggle{
+.menu-toggle {
     display: none;
-    font-size: 2rem;
-    background: none;
-    border: none;
-    color: white; /* Ensures the menu icon is white */
-    cursor: pointer;
 }
 
-
-/* Responsive Mobile Menu */
 @media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        font-size: 2rem;
+        background: none;
+        border: none;
+        color: white !important;
+        cursor: pointer;
+        position: absolute;
+        right: 20px;
+        top: 15px;
+        z-index: 1100;
+    }
+
     .nav-links {
         display: none;
         flex-direction: column;
         position: absolute;
         top: 60px;
         right: 10px;
-        background: white; /* Change background to white */
+        background: rgba(0, 0, 0, 0.9);
         padding: 10px;
         border-radius: 5px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
     .nav-links a {
-        color: black; /* Ensure text is visible */
+        color: white !important;
         font-size: 1rem;
         font-weight: bold;
         padding: 10px;
         display: block;
-        text-decoration: none;
     }
 
     .nav-links a:hover {
-        color: var(--hover-color); /* Add hover effect */
+        color: var(--hover-color);
     }
 
     .nav-links.active {
@@ -145,7 +148,6 @@ header h1 {
     animation: slideDown 1s ease-out forwards;
 }
 
-/* Slide Down Keyframe */
 @keyframes slideDown {
     0% {
         transform: translateY(-50px);
@@ -187,7 +189,6 @@ section {
     justify-content: center;
 }
 
-/* Service, About, and Demo Boxes */
 .service-box, .about-box, .demo-box {
     background: white;
     padding: 20px;
@@ -196,10 +197,6 @@ section {
     transition: transform 0.3s, background 0.3s;
     width: 90%;
     max-width: 300px;
-    text-align: center;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    white-space: normal;
 }
 
 .service-box:hover, .about-box:hover, .demo-box:hover {
@@ -208,33 +205,19 @@ section {
     color: white;
 }
 
-/* Make "About" section visible */
 .about-box {
     background: #FFF4F4;
     border: 1px solid #FF8FAB;
 }
 
-/* Fix text overflow on mobile */
 @media (max-width: 600px) {
     .service-box, .about-box, .demo-box {
         width: 100%;
         max-width: 320px;
         padding: 15px;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-        white-space: normal;
-        text-align: center;
-    }
-
-    .service-box p, .about-box p, .demo-box p {
-        font-size: 14px;
-        line-height: 1.4;
-        margin: 5px 0;
-        word-break: break-word;
     }
 }
 
-/* Contact Section */
 #contact {
     max-width: 80%;
     margin: 30px auto;
@@ -265,73 +248,4 @@ section {
 
 #contact-form button:hover {
     background: var(--hover-color);
-}
-
-/* Prevent horizontal scrolling */
-@media (max-width: 768px) {
-    #contact {
-        max-width: 90%;
-    }
-
-    .services-grid, .demo-grid {
-        display: flex;
-        flex-direction: row;
-        overflow-x: auto;
-        white-space: nowrap;
-        gap: 10px;
-        padding-bottom: 10px;
-    }
-
-    .service-box, .demo-box {
-        min-width: 200px;
-        font-size: 0.9rem;
-    }
-}
-
-/* Reduce header height on mobile */
-@media (max-width: 768px) {
-    header {
-        padding: 60px 15px; /* Reduced padding */
-    }
-
-    header h1 {
-        font-size: 2.5rem; /* Slightly smaller heading */
-    }
-
-    /* Reduce sticky nav height */
-    .sticky-nav {
-        padding: 10px 0; /* Reduced height */
-    }
-
-    .hidden-nav {
-        top: -60px; /* Adjust hiding position */
-    }
-}
-
-/* About Section Styling */
-#about {
-    background: #FFF4F4; /* Light pink background */
-    padding: 40px 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    margin: 20px auto; /* Adds spacing */
-    max-width: 800px; /* Restricts width */
-    border: 2px solid #F27D9E; /* Border to match service boxes */
-}
-
-/* Ensure text wraps properly */
-#about p {
-    font-size: 1rem;
-    color: #333;
-    max-width: 90%;
-    margin: auto;
-}
-
-/* Responsive: Adjust box size */
-@media (max-width: 768px) {
-    #about {
-        max-width: 90%;
-        padding: 30px 15px;
-    }
 }
