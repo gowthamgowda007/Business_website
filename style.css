@@ -253,11 +253,6 @@ section {
 
 
 
-.nav-links {
-    transform: translateY(-20px);
-    opacity: 0;
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-}
 .nav-links.active {
     transform: translateY(0);
     opacity: 1;
@@ -300,4 +295,14 @@ section {
     border-radius: 10px; /* Optional: Adds rounded corners */
     display: block;
     margin: auto;
+}
+
+
+.nav-links {
+    display: flex !important;
+    flex-direction: row;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
