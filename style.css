@@ -306,3 +306,52 @@ section {
     display: block;
     margin: auto;
 }
+
+@media (max-width: 768px) {
+    .container h1 {
+        font-size: 1.5rem;
+    }
+    .container p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+    .cta-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+
+
+.about-container {
+    text-align: center; /* Center-aligns all text */
+    max-width: 800px;
+    margin: auto;
+}
+
+.about-container p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.about-container ul {
+    list-style: none;
+    padding: 0;
+    display: inline-block;
+    text-align: left; /* Aligns checklist items to the left while keeping text centered */
+}
+
+.about-container ul li {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    margin: 8px 0;
+}
+
+.about-container ul li::before {
+    content: "✅";
+    margin-right: 8px;
+    font-size: 1.2rem;
+    color: green;
+}
