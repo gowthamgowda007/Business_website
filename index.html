@@ -113,31 +113,21 @@
     </footer>
 
     <script>
-       // Toggle Mobile Menu
-function toggleMenu() {
-    document.querySelector('.nav-links').classList.toggle('active');
-}
+      document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.querySelector('.menu-toggle'); // The ☰ button
+    const navLinks = document.querySelector('.nav-links'); // The menu container
 
-// Auto-close menu when a link is clicked
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        document.querySelector('.nav-links').classList.remove('active');
+    // Toggle the menu visibility
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
     });
-});
 
-// Send Button Email Functionality
-document.getElementById('sendBtn').addEventListener('click', function() {
-    var name = document.getElementById('user_name').value;
-    var email = document.getElementById('user_email').value;
-    var message = document.getElementById('user_message').value;
-
-    var subject = 'Contact Form Message from ' + name;
-    var body=message;
-    
-    
-    var mailtoLink = 'mailto:gowtham.se21@bmsce.ac.in?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-
-    window.location.href = mailtoLink;
+    // Auto-close menu when clicking a menu item
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active'); // Hide menu after clicking a link
+        });
+    });
 });
 
     </script>
