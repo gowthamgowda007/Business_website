@@ -318,7 +318,7 @@ section {
     .cta-buttons {
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 30px;
     }
 }
 
