@@ -1,7 +1,11 @@
-/* Add font-display for better text rendering */
+/* ============================= */
+/*         Global Styles         */
+/* ============================= */
+
+/* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-/* CSS Variables for Color Scheme */
+/* CSS Variables */
 :root {
     --primary-color: #60A5FA;
     --secondary-color: #FF8FAB;
@@ -9,7 +13,7 @@
     --hover-color: #FF8F8F;
 }
 
-/* Reset and Global Styles */
+/* Reset and Global */
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #f5f5f5;
@@ -20,11 +24,13 @@ body {
     scroll-behavior: smooth;
     padding-top: 80px;
     overflow-x: hidden;
-    max-width: 100%;
     text-align: center;
 }
 
-/* Sticky Navigation Bar */
+/* ============================= */
+/*          Navigation           */
+/* ============================= */
+
 .sticky-nav {
     position: fixed;
     top: 0;
@@ -52,12 +58,12 @@ body {
     padding: 10px 0;
 }
 
-/* Logo Styling */
+/* Logo */
 .logo img {
     height: 50px;
 }
 
-/* Navigation Menu */
+/* Navigation Links */
 .nav-links {
     display: flex;
     flex-direction: row;
@@ -75,12 +81,15 @@ body {
     font-size: 1rem;
     font-weight: 500;
     text-decoration: none;
-    color: black;
-    transition: color 0.3s;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
 }
 
 .nav-links a:hover {
-    color: var(--hover-color);
+    background: var(--cta-color);
+    color: #333;
 }
 
 /* Mobile Menu Button */
@@ -88,12 +97,22 @@ body {
     display: none;
 }
 
-
-
-
 @media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        font-size: 2rem;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+        position: absolute;
+        right: 20px;
+        top: 15px;
+        z-index: 1100;
+    }
+
     .nav-links {
-        display: none; /* Hide by default */
+        display: none;
         flex-direction: column;
         position: absolute;
         top: 60px;
@@ -102,25 +121,24 @@ body {
         padding: 15px;
         border-radius: 5px;
         width: 200px;
+        text-align: center;
     }
 
     .nav-links.active {
-        display: flex; /* Show menu when active */
+        display: flex;
     }
 
     .nav-links a {
         display: block;
         padding: 12px;
-        text-align: center;
         width: 100%;
     }
 }
 
+/* ============================= */
+/*            Header             */
+/* ============================= */
 
-
-
-
-/* Header */
 header {
     background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
     text-align: center;
@@ -149,7 +167,10 @@ header h1 {
     }
 }
 
-/* CTA Button */
+/* ============================= */
+/*         CTA Button            */
+/* ============================= */
+
 .cta-button {
     display: inline-block;
     background: var(--cta-color);
@@ -163,9 +184,15 @@ header h1 {
 
 .cta-button:hover {
     background: var(--hover-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
 }
 
-/* Sections */
+/* ============================= */
+/*         Sections              */
+/* ============================= */
+
 section {
     padding: 40px 10px;
     text-align: center;
@@ -209,6 +236,10 @@ section {
     }
 }
 
+/* ============================= */
+/*          Contact              */
+/* ============================= */
+
 #contact {
     max-width: 80%;
     margin: 30px auto;
@@ -241,46 +272,9 @@ section {
     background: var(--hover-color);
 }
 
-
-.nav-links {
-    display: flex !important;
-    flex-direction: row;
-    gap: 25px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    align-items: center;
-}
-
-/* Navigation Links Styling */
-.nav-links a {
-    font-size: 1rem;
-    font-weight: 500;
-    text-decoration: none;
-    color: #fff; /* White text for better contrast */
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: all 0.3s ease-in-out;
-}
-
-/* Hover Effect */
-.nav-links a:hover {
-    background: var(--cta-color); /* Gold hover effect */
-    color: #333;
-}
-
-/* Mobile Navigation Styling */
-
-
-
-
-.cta-button:hover {
-    background: var(--hover-color);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transform: scale(1.05);
-    transition: all 0.3s ease-in-out;
-}
-
+/* ============================= */
+/*         About Section         */
+/* ============================= */
 
 .about-container {
     background: white;
@@ -299,18 +293,16 @@ section {
     color: #333;
 }
 
-
-
+/* ============================= */
+/*         Demo Images           */
+/* ============================= */
 
 .demo-img {
-    width: 100%; /* Ensures it takes full width of the container */
-    max-width: 300px; /* Prevents images from getting too big */
-    height: 200px; /* Fixes height for consistency */
-    object-fit: cover; /* Ensures images scale properly without distortion */
-    border-radius: 10px; /* Optional: Adds rounded corners */
+    width: 100%;
+    max-width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
     display: block;
     margin: auto;
 }
-
-
-
