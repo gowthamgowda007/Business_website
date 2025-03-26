@@ -355,3 +355,11 @@ section {
     font-size: 1.2rem;
     color: green;
 }
+
+
+@media (max-width: 768px) {
+    .container p {
+        font-size: 0.85rem; /* Smaller text size */
+        line-height: 1.3; /* Adjust spacing */
+    }
+}
