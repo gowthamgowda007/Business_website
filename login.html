@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Mindwave AI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth-compat.js"></script>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #e0e7ff, #f0f4ff);
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center min-h-screen px-4">
+  <div class="bg-white p-8 rounded-xl shadow-md w-full max-w-md">
+    <div class="flex justify-center mb-6">
+      <img src="logo_startup.png" alt="Mindwave AI Logo" class="w-28">
+    </div>
+    <h1 class="text-2xl font-bold text-center mb-1">Welcome!</h1>
+    <p class="text-center text-gray-500 mb-6" id="form-title">Login to continue</p>
+
+    <form id="auth-form" class="flex flex-col gap-4">
+      <input type="email" id="email" placeholder="Email" required class="p-3 border rounded-md focus:ring-2 focus:ring-indigo-500">
+      <input type="password" id="password" placeholder="Password" required class="p-3 border rounded-md focus:ring-2 focus:ring-indigo-500">
+      <button type="submit" id="submit-btn" class="bg-indigo-600 text-white py-3 rounded-md font-semibold hover:bg-indigo-700 transition">Login</button>
+    </form>
+
+    <div class="flex items-center justify-center my-4 text-gray-400">
+      <hr class="flex-1 border-t" /><span class="px-2 text-sm">or</span><hr class="flex-1 border-t" />
+    </div>
+
+    <button id="google-login-btn" class="w-full flex items-center justify-center gap-2 border py-3 rounded-md hover:bg-gray-100 transition">
+      <img src="https://img.icons8.com/color/48/000000/google-logo.png" class="w-5 h-5" alt="Google" />
+      Login with Google
+    </button>
+
+    <p class="text-sm text-center mt-6">
+      <span id="toggle-text">Don't have an account?</span>
+      <a href="#" id="toggle-link" class="text-indigo-600 hover:underline">Sign up</a>
+    </p>
+  </div>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyAMtwUl0IBXIxXxFmtP8xSDbuMALYd5sX8",
+      authDomain: "mindwave-ai.firebaseapp.com",
+      projectId: "mindwave-ai",
+      storageBucket: "mindwave-ai.appspot.com",
+      messagingSenderId: "83578120261",
+      appId: "1:83578120261:web:8b118c3c48a47f59d8db2c"
+    };
+    firebase.initializeApp(firebaseConfig);
+    emailjs.init("oyWc6zEHc2l70BhSJ");
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
